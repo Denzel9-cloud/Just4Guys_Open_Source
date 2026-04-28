@@ -83,7 +83,6 @@ class DashboardFragment : Fragment() {
 
         btnAddExpense.setOnClickListener {
             // Navigate to expenses fragment or show dialog
-            // For now, just show a toast
             android.widget.Toast.makeText(requireContext(), "Add expense feature - use bottom navigation", android.widget.Toast.LENGTH_SHORT).show()
         }
     }
@@ -159,7 +158,6 @@ class DashboardFragment : Fragment() {
         val etMonthlyExpenses = dialogView.findViewById<TextInputEditText>(R.id.etMonthlyExpenses)
         val etSavingsGoal = dialogView.findViewById<TextInputEditText>(R.id.etSavingsGoal)
 
-        // Pre-fill with existing values if available
         lifecycleScope.launch {
             val userId = sharedPrefs.getLong("current_user_id", -1)
             if (userId != -1L) {
